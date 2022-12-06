@@ -58,7 +58,9 @@ public class Manager : MonoBehaviour
                 player.transform.position = Vector2.MoveTowards(player.transform.position, ziel.transform.position, speed * Time.deltaTime);
 
                 if (playerFaceRight == false)
+                {
                     player.GetComponent<SpriteRenderer>().flipX = false;
+                }
             }
             else
             {
@@ -67,7 +69,9 @@ public class Manager : MonoBehaviour
                 player.transform.position = Vector2.MoveTowards(player.transform.position, playerPos, speed * Time.deltaTime);
 
                 if (playerFaceRight == true)
+                {
                     player.GetComponent<SpriteRenderer>().flipX = true;
+                }
             }
         }
         else
@@ -76,9 +80,13 @@ public class Manager : MonoBehaviour
             player.GetComponent<AudioSource>().enabled = false;
 
             if (playerMoveZiel == true)
+            {
                 player.transform.position = playerPos;
+            }
             else
+            {
                 player.transform.position = ziel.transform.position;
+            }
         }
 
     }
